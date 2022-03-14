@@ -1,11 +1,10 @@
 if _G.script_type == 0 then
     local Library = require(game.ReplicatedStorage:WaitForChild("Framework"):WaitForChild("Library"))
     if Library.Save.Get().EggsOpened[_G.egg] then
-        local value = Library.Save.Get().EggsOpened[_G.egg]
+        Library.Message.New(_G.egg.. "(s) opened: " ..Library.Save.Get().EggsOpened[_G.egg])
     else
-        local value = 0
+        Library.Message.New(_G.egg.. "(s) opened: 0")
         end
-    Library.Message.New(_G.egg.. " opened " ..value)
 elseif _G.script_type == 1 then
     local library = loadstring(game:HttpGet('https://pastebin.com/raw/T3tvmaz4'))()
 
